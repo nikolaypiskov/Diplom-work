@@ -1,0 +1,120 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "EditContractUnit.h"
+#include "ContractUnit.h"
+#include "DeliveryUnit.h"
+#include "DMUnit.h"
+#include "InvoiceUnit.h"
+#include "MainUnit.h"
+#include "NomenklaturesUnit.h"
+#include "OrderUnit.h"
+#include "ProtocolUnit.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TContractForm *ContractForm;
+//---------------------------------------------------------------------------
+__fastcall TContractForm::TContractForm(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TContractForm::BitBtn1Click(TObject *Sender)
+{
+ Close();
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+void __fastcall TContractForm::ComboBox1Change(TObject *Sender)
+{
+ if(ComboBox1->Text == "--- всички ---")
+  {
+   ContragentID = "";
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TContractForm::FormShow(TObject *Sender)
+{
+ DateTimePicker1->Date = Now() - 30;
+ ContragentID = "";
+ ComboBox1->Items->Add("--- всички ---");
+ ComboBox1->ItemIndex = 0;
+ if(DM->SelectQuery("SELECT NAME FROM CONTRAGENT ORDER BY NAME"))
+  {
+   DM->Query->First();
+   while(!DM->Query->Eof)
+    {
+     ComboBox1->Items->Add(DM->Query->FieldByName("NAME")->AsString);
+     DM->Query->Next();
+    }
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TContractForm::BitBtn3Click(TObject *Sender)
+{
+  IBQuery1->Close();
+  IBQuery1->SQL->Text =
+  " SELECT                                                            "
+  " C.ID, C.CONTR_DATE, C.CONTR_NR, C.TERM,  C.DESCRIPTION,  CR.NAME AS CONTRAGENT   "
+  " FROM CONTRACT C                                "
+  " JOIN CONTRAGENT CR ON C.CONTRAGENT_ID = CR.ID "
+  " WHERE C.CONTR_DATE >= '" + FormatDateTime("dd.mm.yyyy",DateTimePicker1->Date) + "' ";
+
+ if(Edit1->Text != "")
+   IBQuery1->SQL->Text = IBQuery1->SQL->Text + " AND C.TERM = " + Edit1->Text + " ";
+
+ if(ComboBox1->ItemIndex > 0)
+   IBQuery1->SQL->Text = IBQuery1->SQL->Text + " AND CR.NAME = '" + ComboBox1->Text + "' ";
+
+   IBQuery1->Prepare();
+   IBQuery1->Open();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TContractForm::N1Click(TObject *Sender)
+{
+  TBookmark pos;
+  EditContractForm->IsInsert = false;
+EditContractForm->ContractID = IBQuery1->FieldByName("ID")->AsString;
+EditContractForm->EditNR->Text = IBQuery1->FieldByName("CONTR_NR")->AsString;
+EditContractForm->DateTimePicker1->Date = IBQuery1->FieldByName("CONTR_DATE")->AsDateTime;
+EditContractForm->EditTerm->Text = IBQuery1->FieldByName("TERM")->AsString;
+EditContractForm->EditDescription->Text = IBQuery1->FieldByName("DESCRIPTION")->AsString;
+if(EditContractForm->ShowModal() == mrOk)
+  {
+  pos = IBQuery1->GetBookmark();
+  IBQuery1->Close();
+  IBQuery1->Prepare();
+  IBQuery1->Open();
+  IBQuery1->GotoBookmark(pos);
+  IBQuery1->FreeBookmark(pos);
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TContractForm::N2Click(TObject *Sender)
+{
+  EditContractForm->IsInsert = true;
+  ContractSP->Prepare();
+ ContractSP->ExecProc();
+ EditContractForm->ContractID =  ContractSP->ParamByName("ID")->AsString;
+
+ if(EditContractForm->ShowModal() == mrOk)
+        {
+                IBQuery1->Close();
+                IBQuery1->Prepare();
+                IBQuery1->Open();
+                IBQuery1->Last();
+        }
+}
+//---------------------------------------------------------------------------
+

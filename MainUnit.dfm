@@ -1,0 +1,478 @@
+object MainForm: TMainForm
+  Left = 248
+  Top = 33
+  Width = 1101
+  Height = 402
+  Caption = 'MainForm'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1085
+    Height = 49
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    DesignSize = (
+      1085
+      49)
+    object Bevel1: TBevel
+      Left = 0
+      Top = 0
+      Width = 1085
+      Height = 6
+      Align = alTop
+      Shape = bsTopLine
+    end
+    object Label1: TLabel
+      Left = 424
+      Top = 17
+      Width = 50
+      Height = 13
+      Caption = #1055#1077#1088#1089#1086#1085#1072#1083
+    end
+    object Label2: TLabel
+      Left = 8
+      Top = 17
+      Width = 39
+      Height = 13
+      Caption = #1054#1090' '#1076#1072#1090#1072
+    end
+    object Label3: TLabel
+      Left = 208
+      Top = 17
+      Width = 41
+      Height = 13
+      Caption = #1044#1086' '#1076#1072#1090#1072
+    end
+    object RefreshBtn: TBitBtn
+      Left = 696
+      Top = 13
+      Width = 97
+      Height = 25
+      Caption = #1054#1073#1085#1086#1074#1080
+      TabOrder = 0
+      OnClick = RefreshBtnClick
+    end
+    object FromDate: TDateTimePicker
+      Left = 56
+      Top = 13
+      Width = 129
+      Height = 21
+      CalAlignment = dtaLeft
+      Date = 42914.4755451042
+      Time = 42914.4755451042
+      DateFormat = dfShort
+      DateMode = dmComboBox
+      Kind = dtkDate
+      ParseInput = False
+      TabOrder = 1
+    end
+    object ToDate: TDateTimePicker
+      Left = 256
+      Top = 13
+      Width = 137
+      Height = 21
+      CalAlignment = dtaLeft
+      Date = 42914.4755835532
+      Time = 42914.4755835532
+      DateFormat = dfShort
+      DateMode = dmComboBox
+      Kind = dtkDate
+      ParseInput = False
+      TabOrder = 2
+    end
+    object StaffCombo: TComboBox
+      Left = 480
+      Top = 13
+      Width = 177
+      Height = 24
+      Style = csDropDownList
+      DropDownCount = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ItemHeight = 16
+      ParentFont = False
+      TabOrder = 3
+      OnChange = StaffComboChange
+    end
+    object BitBtn1: TBitBtn
+      Left = 867
+      Top = 16
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = #1053#1086#1074
+      TabOrder = 4
+      OnClick = BitBtn1Click
+    end
+    object BitBtn2: TBitBtn
+      Left = 963
+      Top = 16
+      Width = 89
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1072#1085#1077
+      TabOrder = 5
+      OnClick = BitBtn2Click
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 49
+    Width = 1085
+    Height = 294
+    Align = alClient
+    DataSource = RQDS
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Color = clActiveCaption
+        Expanded = False
+        FieldName = 'SCHEDULE_DATE'
+        Title.Caption = #1044#1072#1090#1072' '#1087#1086' '#1075#1088#1072#1092#1080#1082
+        Visible = True
+      end
+      item
+        Color = clActiveCaption
+        Expanded = False
+        FieldName = 'DAYTIME'
+        Title.Caption = #1063#1072#1089' '#1087#1086' '#1075#1088#1072#1092#1080#1082
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'POSITION_NAME'
+        Title.Caption = #1044#1083#1098#1078#1085#1086#1089#1090
+        Width = 104
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FNAME'
+        Title.Caption = #1057#1083#1091#1078#1080#1090#1077#1083' - '#1080#1084#1077
+        Width = 94
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'LNAME'
+        Title.Caption = #1057#1083#1091#1078#1080#1090#1077#1083' - '#1092#1072#1084#1080#1083#1080#1103
+        Width = 120
+        Visible = True
+      end
+      item
+        Color = clLime
+        Expanded = False
+        FieldName = 'CALC_TYPE'
+        Title.Caption = #1042#1080#1076
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NAME'
+        Title.Caption = #1048#1084#1077
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TERM'
+        Title.Caption = #1057#1088#1086#1082
+        Visible = True
+      end
+      item
+        Color = 1513471
+        Expanded = False
+        FieldName = 'PROTOCOL'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Title.Caption = #1057#1090#1072#1090#1091#1089
+        Width = 107
+        Visible = True
+      end
+      item
+        Color = clAqua
+        Expanded = False
+        FieldName = 'PROT_NR'
+        Title.Caption = #8470' '#1085#1072' '#1087#1088#1086#1090#1086#1082#1086#1083
+        Visible = True
+      end
+      item
+        Color = clYellow
+        Expanded = False
+        FieldName = 'DESCRIPTION'
+        Title.Caption = #1054#1087#1080#1089#1072#1085#1080#1077
+        Width = 270
+        Visible = True
+      end>
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    Top = 24
+    object N1: TMenuItem
+      Caption = #1054#1089#1085#1086#1074#1085#1080' '#1076#1077#1081#1085#1086#1089#1090#1080
+      object N15: TMenuItem
+        Caption = #1055#1086#1088#1098#1095#1082#1080
+        OnClick = N15Click
+      end
+      object N16: TMenuItem
+        Caption = #1044#1086#1089#1090#1072#1074#1082#1080
+        OnClick = N16Click
+      end
+      object N18: TMenuItem
+        Caption = #1055#1088#1086#1090#1086#1082#1086#1083#1080
+        OnClick = N18Click
+      end
+      object N17: TMenuItem
+        Caption = #1060#1072#1082#1090#1091#1088#1080
+        OnClick = N17Click
+      end
+      object N14: TMenuItem
+        Caption = #1044#1086#1075#1086#1074#1086#1088#1080
+        OnClick = N14Click
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object N3: TMenuItem
+        Caption = #1048#1079#1093#1086#1076
+        OnClick = N3Click
+      end
+    end
+    object N5: TMenuItem
+      Caption = #1053#1086#1084#1077#1085#1082#1083#1072#1090#1091#1088#1080
+      object NServiceMenu: TMenuItem
+        Caption = #1059#1089#1083#1091#1075#1080
+        OnClick = NServiceMenuClick
+      end
+      object N4: TMenuItem
+        Tag = 1
+        Caption = #1040#1088#1090#1080#1082#1091#1083#1080
+        OnClick = NServiceMenuClick
+      end
+      object N7: TMenuItem
+        Tag = 2
+        Caption = #1042#1080#1076#1086#1074#1077' '#1072#1088#1090#1080#1082#1091#1083#1080
+        OnClick = NServiceMenuClick
+      end
+      object N8: TMenuItem
+        Tag = 3
+        Caption = #1055#1088#1086#1080#1079#1074#1086#1076#1080#1090#1077#1083#1080
+        OnClick = NServiceMenuClick
+      end
+      object N10: TMenuItem
+        Caption = '-'
+      end
+      object N9: TMenuItem
+        Tag = 4
+        Caption = #1050#1086#1085#1090#1088#1072#1075#1077#1085#1090#1080
+        OnClick = NServiceMenuClick
+      end
+      object N11: TMenuItem
+        Caption = '-'
+      end
+      object N12: TMenuItem
+        Tag = 5
+        Caption = #1055#1077#1088#1089#1086#1085#1072#1083
+        OnClick = NServiceMenuClick
+      end
+      object N13: TMenuItem
+        Tag = 6
+        Caption = #1044#1083#1098#1078#1085#1086#1089#1090#1080
+        OnClick = NServiceMenuClick
+      end
+    end
+    object N6: TMenuItem
+      Caption = #1057#1087#1088#1072#1074#1082#1080
+      object I1: TMenuItem
+        Caption = #1044#1077#1081#1085#1086#1089#1090#1080' '
+        OnClick = I1Click
+      end
+      object N19: TMenuItem
+        Caption = #1053#1072#1083#1080#1095#1085#1086#1089#1090
+        OnClick = N19Click
+      end
+    end
+  end
+  object ReportQuery: TIBQuery
+    Database = DM.DB
+    Transaction = DM.Trans
+    OnCalcFields = ReportQueryCalcFields
+    Active = True
+    BufferChunks = 1000
+    CachedUpdates = False
+    SQL.Strings = (
+      'SELECT'
+      '  S.ID,'
+      '   S.SCHEDULE_DATE,'
+      '   S.DAYTIME,'
+      '   S.DESCRIPTION,'
+      '   S.STAFF_ID,'
+      '   S.ARTICLE_ID,'
+      '   S.SERVICE_ID,'
+      '   S.CONTRACT_ID,'
+      '   PB.ID PROTOCOL_ID,'
+      '   PH.PROT_NR,'
+      '   T.FNAME,'
+      '   T.LNAME,'
+      '   T.POSITION_ID,'
+      '   P.NAME POSITION_NAME,'
+      '   CAST(A.MODEL AS VARCHAR(252)) NAME,'
+      '   CAST(1 AS INTEGER) FLAG,'
+      '   C.TERM'
+      ' FROM SCHEDULE S'
+      '  JOIN STAFF T ON S.STAFF_ID=T.ID'
+      '    JOIN POSITIONS P ON T.POSITION_ID = P.ID'
+      '       LEFT OUTER JOIN ARTICLE A ON S.ARTICLE_ID = A.ID'
+      '            JOIN CONTRACT C ON S.CONTRACT_ID = C.ID'
+      
+        '                LEFT OUTER JOIN PROTOCOL_BODY PB ON PB.SCHEDULE_' +
+        'ID = S.ID'
+      
+        '                    JOIN PROTOCOL_HEAD PH ON PH.ID = PB.PROTOCOL' +
+        'H_ID'
+      'WHERE S.SERVICE_ID IS NULL'
+      ''
+      'UNION ALL'
+      ''
+      'SELECT'
+      '  S.ID,'
+      '   S.SCHEDULE_DATE,'
+      '   S.DAYTIME,'
+      '   S.DESCRIPTION,'
+      '   S.STAFF_ID,'
+      '   S.ARTICLE_ID,'
+      '   S.SERVICE_ID,'
+      '   S.CONTRACT_ID,'
+      '   PB.ID  PROTOCOL_ID,'
+      '   PH.PROT_NR,'
+      '   T.FNAME,'
+      '   T.LNAME,'
+      '   T.POSITION_ID,'
+      '   P.NAME POSITION_NAME,'
+      '   CAST(SR.NAME AS VARCHAR(252)) NAME,'
+      '   CAST(0 AS INTEGER) FLAG ,'
+      '   C.TERM'
+      ' FROM SCHEDULE S'
+      '  JOIN STAFF T ON S.STAFF_ID=T.ID'
+      '    JOIN POSITIONS P ON T.POSITION_ID = P.ID'
+      '       LEFT OUTER JOIN SERVICE SR ON S.SERVICE_ID = SR.ID'
+      '            JOIN CONTRACT C ON S.CONTRACT_ID = C.ID'
+      
+        '                LEFT OUTER JOIN PROTOCOL_BODY PB ON PB.SCHEDULE_' +
+        'ID = S.ID'
+      
+        '                    JOIN PROTOCOL_HEAD PH ON PH.ID = PB.PROTOCOL' +
+        'H_ID'
+      ' WHERE S. ARTICLE_ID IS NULL')
+    Left = 48
+    Top = 96
+    object ReportQueryID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object ReportQuerySCHEDULE_DATE: TDateField
+      FieldName = 'SCHEDULE_DATE'
+    end
+    object ReportQueryDAYTIME: TTimeField
+      FieldName = 'DAYTIME'
+    end
+    object ReportQueryDESCRIPTION: TIBStringField
+      FieldName = 'DESCRIPTION'
+      Size = 100
+    end
+    object ReportQuerySTAFF_ID: TIntegerField
+      FieldName = 'STAFF_ID'
+    end
+    object ReportQueryARTICLE_ID: TIntegerField
+      FieldName = 'ARTICLE_ID'
+    end
+    object ReportQuerySERVICE_ID: TIntegerField
+      FieldName = 'SERVICE_ID'
+    end
+    object ReportQueryCONTRACT_ID: TIntegerField
+      FieldName = 'CONTRACT_ID'
+    end
+    object ReportQueryFNAME: TIBStringField
+      FieldName = 'FNAME'
+      Size = 50
+    end
+    object ReportQueryLNAME: TIBStringField
+      FieldName = 'LNAME'
+      Size = 50
+    end
+    object ReportQueryPOSITION_ID: TIntegerField
+      FieldName = 'POSITION_ID'
+      Required = True
+    end
+    object ReportQueryPOSITION_NAME: TIBStringField
+      FieldName = 'POSITION_NAME'
+      Size = 40
+    end
+    object ReportQueryNAME: TIBStringField
+      FieldName = 'NAME'
+      Size = 252
+    end
+    object ReportQueryFLAG: TIntegerField
+      FieldName = 'FLAG'
+      Required = True
+    end
+    object ReportQueryTERM: TIntegerField
+      FieldName = 'TERM'
+    end
+    object ReportQueryCALC_TYPE: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'CALC_TYPE'
+      Size = 30
+      Calculated = True
+    end
+    object ReportQueryPROTOCOL: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'PROTOCOL'
+      Size = 30
+      Calculated = True
+    end
+    object ReportQueryPROTOCOL_ID: TIntegerField
+      FieldName = 'PROTOCOL_ID'
+    end
+    object ReportQueryPROT_NR: TIntegerField
+      FieldName = 'PROT_NR'
+    end
+  end
+  object RQDS: TDataSource
+    DataSet = ReportQuery
+    Left = 112
+    Top = 96
+  end
+  object ScheduleSP: TIBStoredProc
+    Database = DM.DB
+    Transaction = DM.Trans
+    StoredProcName = 'SCHEDULE_IDSP'
+    Left = 520
+    Top = 208
+  end
+end

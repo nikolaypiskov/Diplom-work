@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="DiplmWork3.exe"/>
+    <OBJFILES value="DiplmWork3.obj MainUnit.obj DMUnit.obj ContractUnit.obj DeliveryUnit.obj 
+      InvoiceUnit.obj NomenklaturesUnit.obj OrderUnit.obj ProtocolUnit.obj 
+      EditContractUnit.obj EditDeliveryUnit.obj EditOrderUnit.obj 
+      EditProtocolUnit.obj EditInvoiceUnit.obj EditScheduleUnit.obj 
+      EditOrderBodyUnit.obj EditDeliveryBodyUnit.obj EditProtocolBodyUnit.obj 
+      EditInvoiceBodyUnit.obj ArticleUnit.obj ServiceUnit.obj StaffInvUnit.obj 
+      StockUnit.obj"/>
+    <RESFILES value="DiplmWork3.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) MainUnit.dfm DMUnit.dfm ContractUnit.dfm DeliveryUnit.dfm 
+      InvoiceUnit.dfm NomenklaturesUnit.dfm OrderUnit.dfm ProtocolUnit.dfm 
+      EditContractUnit.dfm EditDeliveryUnit.dfm EditOrderUnit.dfm 
+      EditProtocolUnit.dfm EditInvoiceUnit.dfm EditScheduleUnit.dfm 
+      EditOrderBodyUnit.dfm EditDeliveryBodyUnit.dfm EditProtocolBodyUnit.dfm 
+      EditInvoiceBodyUnit.dfm ArticleUnit.dfm ServiceUnit.dfm StaffInvUnit.dfm 
+      StockUnit.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vcldb.lib ibxpress.lib cds.lib dsnap.lib 
+      dbexpress.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="DiplmWork3.cpp"/>
+    <INCLUDEPATH value="C:\WINDOWS\System32;$(BCB)\Projects;D:\TU\diplomna\v3;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="C:\WINDOWS\System32;$(BCB)\Projects;D:\TU\diplomna\v3;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-IC:\WINDOWS\System32 -I$(BCB)\Projects -ID:\TU\diplomna\v3 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="DiplmWork3.res" FORMNAME="" UNITNAME="DiplmWork3.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DiplmWork3.cpp" FORMNAME="" UNITNAME="DiplmWork3" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MainUnit.cpp" FORMNAME="MainForm" UNITNAME="MainUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DMUnit.cpp" FORMNAME="DM" UNITNAME="DMUnit" CONTAINERID="CCompiler" DESIGNCLASS="TDataModule" LOCALCOMMAND=""/>
+      <FILE FILENAME="ContractUnit.cpp" FORMNAME="ContractForm" UNITNAME="ContractUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DeliveryUnit.cpp" FORMNAME="DeliveryForm" UNITNAME="DeliveryUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InvoiceUnit.cpp" FORMNAME="InvoiceForm" UNITNAME="InvoiceUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NomenklaturesUnit.cpp" FORMNAME="NomenklaturesForm" UNITNAME="NomenklaturesUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OrderUnit.cpp" FORMNAME="OrderForm" UNITNAME="OrderUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ProtocolUnit.cpp" FORMNAME="ProtocolForm" UNITNAME="ProtocolUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditContractUnit.cpp" FORMNAME="EditContractForm" UNITNAME="EditContractUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditDeliveryUnit.cpp" FORMNAME="EditDeliveryForm" UNITNAME="EditDeliveryUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditOrderUnit.cpp" FORMNAME="EditOrderForm" UNITNAME="EditOrderUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditProtocolUnit.cpp" FORMNAME="EditProtocolForm" UNITNAME="EditProtocolUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditInvoiceUnit.cpp" FORMNAME="EditInvoiceForm" UNITNAME="EditInvoiceUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditScheduleUnit.cpp" FORMNAME="EditScheduleForm" UNITNAME="EditScheduleUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditOrderBodyUnit.cpp" FORMNAME="EditOrderBodyForm" UNITNAME="EditOrderBodyUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditDeliveryBodyUnit.cpp" FORMNAME="EditDeliveryBodyForm" UNITNAME="EditDeliveryBodyUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditProtocolBodyUnit.cpp" FORMNAME="EditProtocolBodyForm" UNITNAME="EditProtocolBodyUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EditInvoiceBodyUnit.cpp" FORMNAME="EditInvoiceBodyForm" UNITNAME="EditInvoiceBodyUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ArticleUnit.cpp" FORMNAME="ArticleForm" UNITNAME="ArticleUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ServiceUnit.cpp" FORMNAME="ServiceForm" UNITNAME="ServiceUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="StaffInvUnit.cpp" FORMNAME="Form1" UNITNAME="StaffInvUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="StockUnit.cpp" FORMNAME="Form2" UNITNAME="StockUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1026
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+d:\install\borland\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>
